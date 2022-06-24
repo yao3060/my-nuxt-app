@@ -3,11 +3,13 @@
     <p>Here's a counter:</p>
     <div class="flex items-center justify-center">
 
-      <button @click="counter++" class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700">
+      <button @click="counterStore.increment()"
+        class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700">
         +
       </button>
-      <span class="mx-2">{{ counter }}</span>
-      <button @click="counter--" class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700">
+      <span class="mx-2">{{ counterStore.count }}</span>
+      <button @click="counterStore.decrement()"
+        class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700">
         -
       </button>
     </div>
@@ -15,6 +17,20 @@
 </template>
 
 <script lang="ts" setup>
-  const  layout = 'custom'
-  const counter = ref(0)
+import { useCounterStore } from '~/stores/counter'
+const counterStore = useCounterStore()
+
+const title = 'Home Page Title'
+
+definePageMeta({
+  layout: "custom",
+});
+
+useHead({
+  title,
+  meta: [
+    { name: 'description', content: 'My amazing site.' },
+    { name: 'keywords', content: 'nuxt, vue' }
+  ]
+})
 </script>

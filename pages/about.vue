@@ -17,6 +17,7 @@
         <div class="text-slate-700 dark:text-slate-500">
           Staff Engineer, Algolia
         </div>
+        <button class="btn-primary">Contact</button>
       </figcaption>
     </div>
   </figure>

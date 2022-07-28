@@ -1,7 +1,8 @@
+import { fileURLToPath } from 'url'
 import { describe, expect, it } from 'vitest'
 
-import { setup, $fetch, isDev } from '@nuxt/test-utils-edge'
-import { fileURLToPath } from 'url'
+import { setup, $fetch } from '@nuxt/test-utils-edge'
+
 
 describe('SSR', async () => {
 
